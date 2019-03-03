@@ -22,7 +22,7 @@ class TopicsController extends Controller
         $topics = $topic->withOrder($request->order)->paginate(20);
         return view('topics.index', compact('topics'));
     }
-    
+
     public function show(Request $request, Topic $topic)
     {
         // URL 矫正
