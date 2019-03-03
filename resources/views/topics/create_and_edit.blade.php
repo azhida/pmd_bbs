@@ -26,6 +26,7 @@
                     @else
                         <form action="{{ route('topics.store') }}" method="POST" accept-charset="UTF-8">
                     @endif
+
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
@@ -34,9 +35,9 @@
 
                         <div class="form-group">
                             <select class="form-control" name="category_id" required>
-                                <option value="" hidden disabled selected>请选择分类</option>
+                                <option value="" hidden disabled {{ $topic->id ? '' : 'selected' }}>请选择分类</option>
                                 @foreach ($categories as $value)
-                                    <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                    <option value="{{ $value->id }}" {{ $topic->category_id == $value->id ? 'selected' : '' }}>{{ $value->name }}</option>
                                 @endforeach
                             </select>
                         </div>
