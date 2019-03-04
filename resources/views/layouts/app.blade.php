@@ -8,8 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', '坡马代论坛')</title>
-    <meta name="description" content="@yield('description', '坡马代论坛')" />
+    <title>@yield('title', 'LaraBBS') - {{ setting('site_name', '坡马代论坛') }}</title>
+    <meta name="description" content="@yield('description', setting('seo_description', '坡马代论坛'))" />
+    <meta name="keyword" content="@yield('keyword', setting('seo_keyword', '坡马代,社区,论坛,坡马代风景'))" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
