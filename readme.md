@@ -11,6 +11,8 @@
 - 1、使用 Supervisor 进程工具进行管理，配置和使用请参照 文档(https://learnku.com/docs/laravel/5.5/horizon/1345#Supervisor-%E9%85%8D%E7%BD%AE) 进行配置
 - 2、每一次部署代码时，需 artisan horizon:terminate 然后再 artisan horizon 重新加载代码
 
+模型监控器需要到 AppServiceProvider 中注册，否则不生效；
+
 
 ## 其他
 #### 新建 Artisan 命令
@@ -21,4 +23,3 @@ npm run watch-poll
 
 #### 计划任务（部署时请替换为实际路径）
 增加 Cron 条目：* * * * * php /home/vagrant/Code/larabbs/artisan schedule:run >> /dev/null 2>&1
-

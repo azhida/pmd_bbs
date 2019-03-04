@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class); // 先有用户
         $this->call(TopicsTableSeeder::class); // 用户发帖
         $this->call(ReplysTableSeeder::class); // 评论（回复）帖子
+        $this->call(LinksTableSeeder::class); // 资源链接
     }
 }
