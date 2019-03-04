@@ -18,6 +18,8 @@
 #### 新建 Artisan 命令
 php artisan make:command CalculateActiveUser --command=pmd_bbs:calculate-active-user
 
+php artisan make:command SyncUserActivedAt --command=pmd_bbs:sync-user-actived-at
+
 #### 编译 .scss 为 .css
 npm run watch-poll
 
