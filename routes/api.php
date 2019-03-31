@@ -39,7 +39,7 @@ $api->version('v1', [
         // 话题详情
         $api->get('topics/{topic}', 'TopicsController@show')
             ->name('api.topics.show');
-        // 某个用户发布的话题
+        // 话题详情（某个用户发布的话题）
         $api->get('users/{user}/topics', 'TopicsController@userIndex')
             ->name('api.users.topics.index');
         // 话题回复列表
