@@ -29,6 +29,9 @@ $api->version('v1', [
         // 登录
         $api->post('authorizations', 'AuthorizationsController@store')
             ->name('api.authorizations.store');
+        // 小程序登录
+        $api->post('weapp/authorizations', 'AuthorizationsController@weappStore')
+            ->name('api.weapp.authorizations.store');
 
         // 分类列表
         $api->get('categories', 'CategoriesController@index')
