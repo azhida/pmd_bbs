@@ -60,7 +60,9 @@ $api->version('v1', [
         // 活跃用户
         $api->get('actived/users', 'UsersController@activedIndex')
             ->name('api.actived.users.index');
-
+        // 用户详情
+        $api->get('users/{user}', 'UsersController@show')
+            ->name('api.users.show');
 
         // 需要 token 验证的接口
         $api->group(['middleware' => 'api.auth'], function($api) {
