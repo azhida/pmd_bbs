@@ -3,5 +3,5 @@
 return [
     'key' => env('JPUSH_KEY'),
     'secret' => env('JPUSH_SECRET'),
-    'log_path' => env('JPUSH_LOG_PATH', storage_path('log/jpush.log')),
+    'log' => env('JPUSH_LOG', storage_path('logs/jpush.log')),
 ];
