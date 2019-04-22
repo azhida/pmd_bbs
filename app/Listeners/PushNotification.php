@@ -42,10 +42,14 @@ class PushNotification
         }
 
         // 推送消息
-        $this->client->push()
-            ->setPlatform('all')
-            ->addRegistrationId($user->registration_id)
-            ->setNotificationAlert(strip_tags($notification->data['reply_content']))
-            ->send();
+        $pusher = $this->client->push();
+        $pusher->setPlatform('all');
+        $pusher->addRegistrationId($user->registration_id);
+        $pusher->setNotificationAlert(strip_tags($notification->data['reply_content']));
+        try {
+            $pusher->send();
+        } catch (\JPush\Exceptions\JPushException $e) {
+            \Log::error('极光推送：' . $e->getMessage());
+        }
     }
 }
